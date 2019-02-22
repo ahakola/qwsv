@@ -4,7 +4,7 @@ This is pulled from my over decade old back ups of my server where I used to run
 
 ## MVDSV
 
-I ran the server with *MVSDV* (https://github.com/deurk/mvdsv), but you can use any server software you find for your hardware and OS. MVSDV is available at least for 32bit and 64bit Windows, Linux and 32bit ARM. If you want to try to run this on Raspberry Pi for example, I'm pretty sure the ARM version should compile on Rasbian (https://github.com/deurk/mvdsv#compiling-on-ubuntu).
+I ran the server with **MVSDV** (https://github.com/deurk/mvdsv), but you can use any server software you find for your hardware and OS. **MVSDV** is available at least for 32bit and 64bit Windows, Linux and 32bit ARM. If you want to try to run this on Raspberry Pi for example, I'm pretty sure the ARM version should compile on Rasbian (https://github.com/deurk/mvdsv#compiling-on-ubuntu).
 
 If you are on x86 based system and are feeling lucky, you can try to `chmod +x mvdsv` and/or `chmod +x qwsv` and try to run those.
 
@@ -13,12 +13,12 @@ If you are on x86 based system and are feeling lucky, you can try to `chmod +x m
 
 I ran this script with crontab (`sudo crontab -e`) on boot (`@reboot /where/ever/you/place/this/sv-up.sh`) to automatically start the qw-server and it should also restart the qw-server if it crashes or exits for any other reason.
 
-Make sure the script is executable (chmod +x sv-up.sh) and edit the `quakedir` variable and external IP flag of the launch command to match your own setup or use the launch command without the *-ip* flag if you have only public IP visible to the machine (I used it because NAT hid the public IP from the server and caused issues when trying to connect to the server).
+Make sure the script is executable (`chmod +x sv-up.sh`) and edit the `quakedir` variable and external IP with *-ip* flag of the launch command to match your own setup or use the launch command without the *-ip* flag if you have only public IP visible to the machine (I used it because NAT hid the public IP from the server and caused issues when trying to connect to the server).
 
 
 ## id1/pak0.pak and id1/pak1.pak
 
-I didn't include those files in this repository because I'm not 100% sure of the legality of it, but you can copy the *id1* folder of your own Quake install or search the internet for those files.
+I didn't include those files in this repository because I'm not 100% sure of the legality of it, but you can copy the **id1/** folder of your own Quake install or search the internet for those files.
 
 
 ## fortress/server.cfg
@@ -28,14 +28,14 @@ This is based on old TomteFortress-tournament configuration template. Remember t
 
 ### Deathmatch
 
-Set this to *3* always or players can't change class:
+Set this to *3* always or players can't change class.
 
 `deathmatch 3 `
 
 
 ### Team play
 
-Team play settings are set with `teamplay X?QWTF2.9` line in the *server.cfg* where *X* is a number created by a bitmask field. Bits are:
+Team play settings are set with `teamplay X?QWTF2.9` line where *X* is a number created by a bitmask field. Bits are:
 
 Bit | Function
 ---: | ---
@@ -55,7 +55,7 @@ Bit | Function
 8192 | Team-members take 1/2 mirror damage from area-affect weaponry.
 16384 | Team-members take full mirror damage from area-affect weaponry.
 
-Bitmask fields are constructed by combining the bits of wanted settings. For example two very common setting are "team-members take only half of the damage" *11* ($1 + 2 + 8$) and "no friendly fire" *21* ($1 + 4 + 16$).
+Bitmask fields are constructed by combining the bits of wanted settings. For example two very common setting are "team-members take only half of the damage" *11* (*1 + 2 + 8*) and "no friendly fire" *21* (*1 + 4 + 16*).
 
 I have no idea what bits *32* and *64* do, but I would guess they have something to do players only being able to swap teams to the "underdog" team to even the game and prevent snowballing.
 
@@ -75,9 +75,11 @@ To turn pre-match off, use `localinfo pm 0` or turn clanmode off (`localinfo c o
 `timelimit 30`
 
 `localinfo c on` or `localinfo c on`
+
 `localinfo clan on` or `localinfo clan off`
 
 `localinfo pm 5` or `localinfo pm 0`
+
 `localinfo prematch 5` or `localinfo prematch 0`
 
 
@@ -130,7 +132,7 @@ Bit | Function
 For example, if you want to disable powerup timer, you would type at
 server console: `serverinfo fpd 2`. Or if you want to disable powerup timer
 and lag features, you would use: `serverinfo fpd 10`, because bits for timer
-and for lag features combined ($2+8$) is 10..
+and for lag features combined (*2+8*) is 10..
 
 On Team Fortress servers, *%e* and *%x* use bottomcolor to determine
 team and *%x* won't report own players at all. Also skin forcing is
@@ -153,16 +155,18 @@ I have no idea what bits *1024 - 8192* do and I'm not 100% sure, but bits *16384
 
 ### Score counting
 
-By default player's get 1 point for every kill they make and 10 points for every cap made by a team member. Team's score is calculated combining team's frag counts and adding 10 points for every cap.
+By default player's get 1 point for every kill they make and 10 points for every cap made by a team. Team's score is calculated combining team's frag counts and adding 10 points for every cap.
 
 In clan matches sometimes you play so called *Caps Only* or *Team Frags* -format. This makes each player's frag count equal to the number of points his/her team has. In *Team Frags*-mode, frags for killing enemies are not counted towards the team's total score, and only the points from caps matter.
 
 `localinfo t on` or `localinfo t off`
+
 `localinfo teamfrags on` or `localinfo teamfrags off`
 
 There is also 3rd mode called *Full Team Scores* where points are calculated like in default way, but each player's frag count is equal to the number of points his/her team has.
 
 `localinfo fts on` or `localinfo fts off`
+
 `localinfo fullteamscore on` or `localinfo fullteamscore off`
 
 
@@ -211,16 +215,16 @@ In this example we create fixed rotation of *bases*, *2fort5r* and *well6*. I'm 
 
 1. Inside `\fortress\qwmcycle` directory create .cfg files called `mapX.cfg`, where *X* is number between 1 and the amount of maps in your rotation + 1 (the extra .cfg file is used to loop back to the start of the rotation).
 
-   `map1.cfg` which contains the following line:
-      `map bases`
-   `map2.cfg` which contains the following line:
-      `map 2fort5r`
-   `map3.cfg` which contains the following line:
-      `map well6`
-   `map4.cfg` which contains the following line:
+   `map1.cfg` which contains the following line:  
+      `map bases`  
+   `map2.cfg` which contains the following line:  
+      `map 2fort5r`  
+   `map3.cfg` which contains the following line:  
+      `map well6`  
+   `map4.cfg` which contains the following line:  
       `serverinfo n 0`
 
-2. Edit the server.cfg to use `map` command to load to the first map in your rotation. Also add line `serverinfo n 1` to prevent the first map playing twice when you boot your server up:
+2. Edit the server.cfg to use `map` command to load to the first map in your rotation. Also add line `serverinfo n 1` to prevent the first map playing twice when you boot your server up:  
    `map 2fort_32`  
    `serverinfo n 1`
 
@@ -250,7 +254,7 @@ If you want to make a server rerun the same level over and over again, you will 
 
 **N.B.** Make sure all the maps in the list are spelt correctly and that they are in your server's map directory. If they're not, the server will crash when it tries to enter the map.
 
-**N.B.** The *n* serverinfo key stores the current map number in the list. If you want to jump around the levels, you can just set the key to (desired level number - 1).
+**N.B.** The *n* serverinfo key stores the current map number in the list. If you want to jump around the levels, you can just set the key to (desired level number - 1).  
    E.g. if you wanted to jump to map 3 in the list, enter this: `serverinfo n 2` and then end the level.
 
 
