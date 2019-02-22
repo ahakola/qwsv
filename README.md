@@ -18,7 +18,7 @@ Make sure the script is executable (`chmod +x sv-up.sh`) and edit the `quakedir`
 
 ## id1/pak0.pak and id1/pak1.pak
 
-I didn't include those files in this repository because I'm not 100% sure of the legality of it, but you can copy the **id1/** folder of your own Quake install or search the internet for those files.
+I didn't include those files in this repository because I'm not 100% sure of the legality of sharing them, but you can copy the **id1/** folder of your own Quake install or search the internet for those files.
 
 
 ## fortress/server.cfg
@@ -74,12 +74,10 @@ To turn pre-match off, use `localinfo pm 0` or turn clanmode off (`localinfo c o
 
 `timelimit 30`
 
-`localinfo c on` or `localinfo c on`
-
+`localinfo c on` or `localinfo c on`  
 `localinfo clan on` or `localinfo clan off`
 
-`localinfo pm 5` or `localinfo pm 0`
-
+`localinfo pm 5` or `localinfo pm 0`  
 `localinfo prematch 5` or `localinfo prematch 0`
 
 
@@ -159,14 +157,12 @@ By default player's get 1 point for every kill they make and 10 points for every
 
 In clan matches sometimes you play so called *Caps Only* or *Team Frags* -format. This makes each player's frag count equal to the number of points his/her team has. In *Team Frags*-mode, frags for killing enemies are not counted towards the team's total score, and only the points from caps matter.
 
-`localinfo t on` or `localinfo t off`
-
+`localinfo t on` or `localinfo t off`  
 `localinfo teamfrags on` or `localinfo teamfrags off`
 
 There is also 3rd mode called *Full Team Scores* where points are calculated like in default way, but each player's frag count is equal to the number of points his/her team has.
 
-`localinfo fts on` or `localinfo fts off`
-
+`localinfo fts on` or `localinfo fts off`  
 `localinfo fullteamscore on` or `localinfo fullteamscore off`
 
 
@@ -213,8 +209,7 @@ Freely edited from http://quakeone.com/forum/quake-help/servers-and-coding/7882-
 
 In this example we create fixed rotation of *bases*, *2fort5r* and *well6*. I'm sure if you can get the server up and running, you are smart enough to figure out how to alter the rotation for your needs.
 
-1. Inside `\fortress\qwmcycle` directory create .cfg files called `mapX.cfg`, where *X* is number between 1 and the amount of maps in your rotation + 1 (the extra .cfg file is used to loop back to the start of the rotation).
-
+1. Inside `\fortress\qwmcycle` directory create .cfg files called `mapX.cfg`, where *X* is number between 1 and the amount of maps in your rotation + 1 (the extra .cfg file is used to loop back to the start of the rotation).  
    `map1.cfg` which contains the following line:  
       `map bases`  
    `map2.cfg` which contains the following line:  
@@ -232,10 +227,8 @@ In this example we create fixed rotation of *bases*, *2fort5r* and *well6*. I'm 
 
 4. Profit! You are done.
 
-There is no limit to the number of maps you can cycle between. You can also use these .cfg file to change any server settings per map.
-
-In our example, let's allow maximum of 24 players on *bases* and *well6*, but only 16 on *2fort5r* by altering the .cfg files:
-
+There is no limit to the number of maps you can cycle between. You can also use these .cfg file to change any server settings per map.  
+In our example, let's allow maximum of 24 players on *bases* and *well6*, but only 16 on *2fort5r* by altering the .cfg files:  
 ```
 map1.cfg
    maxclients 24
@@ -255,10 +248,10 @@ If you want to make a server rerun the same level over and over again, you will 
 **N.B.** Make sure all the maps in the list are spelt correctly and that they are in your server's map directory. If they're not, the server will crash when it tries to enter the map.
 
 **N.B.** The *n* serverinfo key stores the current map number in the list. If you want to jump around the levels, you can just set the key to (desired level number - 1).  
-   E.g. if you wanted to jump to map 3 in the list, enter this: `serverinfo n 2` and then end the level.
+E.g. if you wanted to jump to map 3 in the list, enter this: `serverinfo n 2` and then end the level.
 
 
-### Other settings
+### Other note worthy settings
 
 * When on, AutoTeam will automatically assign players to the team with the least number of people in it, when the player chooses his/her class.
 
