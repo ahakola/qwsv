@@ -1,0 +1,42 @@
+===== Grenades
+
+Some kind of alias for throwing grenades:
+All of these assume you have a grenade timer called gren.wav in your fortress\sound -folder. Grap it from the downloads.
+
+=== Simple "first press primes, second press throws" aliases
+
+    alias gren1prime "primeone; play gren; bind [gren1button] gren1throw"
+    alias gren1throw "throwgren; bind [gren1button] gren1prime"
+
+    alias gren2prime "primetwo; play gren; bind [gren2button] gren2throw"
+    alias gren2throw "throwgren; bind [gren2button] gren2prime"
+
+    bind [gren1button] gren1prime
+    bind [gren2button] gren2prime
+
+=== Simple "pressing primes, releasing throws" aliases
+
+    alias +grenone "primeone; play gren"
+    alias -grenone  "throwgren"
+
+    alias +grentwo "primetwo; play gren"
+    alias -grentwo  "throwgren"
+    bind [gren1button] +grenone
+    bind [gren2button] +grentwo
+
+=== [Recommended] Grentimer with msg_triggers
+
+Either of 1) or 2) with "play gren" removed.
+
+    alias grentime "play gren"
+    msg_trigger grentime "renade primed"
+
+This will make the timing more accurate and will not play the .wav unless the grenade actually was primed (can happen occasionally with 1) or 2) due to lag)
+The following commands make grens a little bit more pleasant to use as well:
+
+    alias cleargrens "bind [gren1button] gren1prime; bind [gren2button] gren2prime"
+    alias f_death cleargrens
+
+With the typical "press once to prime, another time to throw" -aliases you often have to press twice to prime after dying, these two aliases get rid of the problem.
+
+* Not that msg_triggers do not work with the smackdown -ruleset. Make sure to use ruleset default in your TF -config. *

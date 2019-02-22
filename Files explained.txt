@@ -1,0 +1,29 @@
+fortress.rar
+	- Team Fortress -package
+	- Enables you to play/host QWTF games
+	- Unpack to [quake-root] -folder
+
+gren.zip
+	- Gren timer wav
+	- Check Grenades.txt for more info how to use this
+	- Unpack to [quake-root]/fortress/sound -folder
+
+locs.zip
+	- Location files for Team Fortress maps
+	- Can be used with proxy (like Qizmo) to let others know your location on the map (the days before everyone had voice comms)
+	- Unpack to [quake-root]/qw/locs -folder
+
+maps.zip
+	- Maps for Team Fortress
+	- MUCH faster to copy these from internet than download with qw-client from the game server
+	- Unpack to [quake-root]/fortress/maps -folder
+
+pak0.pak & pak1.pak
+	- Either copy them from your own Quake installation or search the internet
+	- Has been seen once upon a time at
+		https://www.mirafiori.com/ftp/pub/gaming/
+		https://github.com/rictorres/quake-ktx-server/tree/master/id1
+	- Copy these files to [quake-root]/id1 -folder
+
+qizmo291.zip
+	- Proxy to prevent client side cheats, location reporting, voice comms, compressed demo recording etc.
