@@ -219,8 +219,8 @@ In this example we create fixed rotation of *bases*, *2fort5r* and *well6*. I'm 
    `map4.cfg` which contains the following line:  
       `serverinfo n 0`
 
-2. Edit the server.cfg to use `map` command to load to the first map in your rotation. Also add line `serverinfo n 1` to prevent the first map playing twice when you boot your server up:  
-   `map 2fort_32`  
+2. Edit the `server.cfg` to use `map` command to load to the first map in your rotation. Also add line `serverinfo n 1` to prevent the first map playing twice when you boot your server up:  
+   `map bases`  
    `serverinfo n 1`
 
 3. ???
