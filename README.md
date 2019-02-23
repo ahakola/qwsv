@@ -6,7 +6,7 @@ This is pulled from my over decade old back ups of my server where I used to run
 
 I ran the server with **MVSDV** (https://github.com/deurk/mvdsv), but you can use any server software you find for your hardware and OS. **MVSDV** is available at least for 32bit and 64bit Windows, Linux and 32bit ARM. If you want to try to run this on Raspberry Pi for example, I'm pretty sure the ARM version should compile on Rasbian (https://github.com/deurk/mvdsv#compiling-on-ubuntu).
 
-If you are on x86 based system and are feeling lucky, you can try to `chmod +x mvdsv` and/or `chmod +x qwsv` and try to run those.
+If you are on x86 based Linux system and are feeling lucky, you can try to yolo with `chmod +x mvdsv` and/or `chmod +x qwsv` and try to run those.
 
 
 ## sv-up.sh
@@ -260,4 +260,9 @@ E.g. if you wanted to jump to map 3 in the list, enter this: `serverinfo n 2` an
 * **Map checksums** checks the map file on the server with the one client uses on client connect. If the clients map has hacked textures, removed walls or waterhack then client is disconnected.
 
    `sv_mapcheck 1`
+
+* **Announce server** to the master server lists so all the "relevant" softwares like *GameSpy* and *The All-Seeing Eye* for example can find your server and you get more players. You can add as many master servers as you want separated by space. QuakeServers.net for example has listed some master servers on their site (https://www.quakeservers.net/quakeworld/master_servers/).
+
+   `setmaster master.server1.com:27000 server2.net:27000 123.123.123.123:27000`  
+   `setmaster master.quakeservers.net:27000`
 
