@@ -70,7 +70,7 @@ If you enable *clanmode*, you can also turn on pre-match. During pre-match clans
 
 If you set your pre-match time to 5 minutes (`localinfo pm 5`) and want the match to last 30 minutes, you have to set the timelimit to 35 minutes (`timelimit 35`).
 
-To turn pre-match off, use `localinfo pm 0` or turn clanmode off (`localinfo c off`).
+To turn pre-match off, use `localinfo pm 0` or turn clanmode off (`localinfo c off`). Pre-match setting will be ignored if *clanmode* is *off*.
 
 `timelimit 30`
 
