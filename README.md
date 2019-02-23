@@ -39,7 +39,7 @@ Team play settings are set with `teamplay X?QWTF2.9` line where *X* is a number 
 
 Bit | Function
 ---: | ---
-1 | Team play ON. This has to be always on?
+1 | Team play normal. This has to be always on?
 2 | Team-members only take 1/2 damage from direct fire.
 4 | Team-members take no damage from direct fire.
 8 | Team-members only take 1/2 damage from area-affect weaponry.
