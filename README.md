@@ -85,7 +85,7 @@ To turn pre-match off, use `localinfo pm 0` or turn clanmode off (`localinfo c o
 
 Flood protection controls the rate clients can send messages. If client sends more then *X* messages in time *Y*, they will be silenced for *Z* seconds:
 
-`floodprot *X* *Y* *Z*`
+`floodprot X Y Z`
 
 Optionally you can set custom message for client when they trigger the flood protection:
 
