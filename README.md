@@ -247,17 +247,17 @@ If you want to make a server rerun the same level over and over again, you will 
 
 **N.B.** Make sure all the maps in the list are spelt correctly and that they are in your server's map directory. If they're not, the server will crash when it tries to enter the map.
 
-**N.B.** The *n* serverinfo key stores the current map number in the list. If you want to jump around the levels, you can just set the key to (desired level number - 1).  
+**N.B.** The *n* serverinfo key stores the current map number in the list. If you want to jump around the levels, you can just set the key to (*desired level number - 1*).  
 E.g. if you wanted to jump to map 3 in the list, enter this: `serverinfo n 2` and then end the level.
 
 
 ### Other note worthy settings
 
-* When on, AutoTeam will automatically assign players to the team with the least number of people in it, when the player chooses his/her class.
+* **AutoTeam** will automatically assign players to the team with the least number of people in it, when the player chooses his/her class.
 
    `localinfo autoteam on` or `localinfo autoteam off`
 
-* Enable map checksums. This checks the map file on the server with the one client uses. If the clients map has hacked textures, removed walls or waterhack then client is disconnected:
+* **Map checksums** checks the map file on the server with the one client uses on client connect. If the clients map has hacked textures, removed walls or waterhack then client is disconnected.
 
    `sv_mapcheck 1`
 
